@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Animal.js"></script>
+
+</head>
+<body>
+<h2>Choose an animal to get a description</h2>
+<hr  />
+
+Choose animal:
+<select id="selection>" name="selection" onchange="populate(this.id, 'slct2')">
+    <option value=""></option>
+    <option value=""></option>
+</select>
+<select id="slct2" name="slct2"></select>
+<script type="text/javascript">
+    function populate(s1, s2){
+        var s1=document.getElementById(s1);
+    }
+    var selection=document.getElementById(selection);
+    var Tiger=new Animal("Tiger", 'Fluffy and Orange');
+    var Snake=new Animal('Snake', 'Slithery and Small');
+    var Cow=new Animal('Cow', 'Big and White with Black Spots');
+    var Dog=new Animal('Dog', 'Small and comes in a variety of sizes');
+    var Turtle=new Animal('Turtle', 'Green with a hard shell');
+    var Tortoise =new Animal('Tortoise', 'Basically a turtle, but mostly lives on land');
+    var animalArray= [Tiger.description, Snake, Cow, Dog, Turtle, Tortoise];
+    var s1=document.getElementById(s1);
+    s1.options.add("tiger");
+    for(var option in animalArray){
+        var pair = animalArray[option]
+        var newOption = document.createElement("option");
+        newOption.value=pair;
+        s1.options.add(newOption);
+
+    }
+</script>
+</body>
+</html>
