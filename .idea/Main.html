@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Animal.js"></script>
+    <script type="text/javascript">
+        function populate(s1, s2){
+            var Tiger= new Animal('Tiger', 'Orange and Fluffy');
+            var s1=document.getElementById('s1');
+            var s2=document.getElementById(s2);
+            s1.innerHTML='Stuff';
+
+            s2.innerHTML=Tiger;
+            if(s1.value=='Tiger'){
+                var optionArray=[Tiger]
+
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<h2>Choose animal</h2>
+<hr  />
+Name
+<select id="slct1" name="slct1" onchange="populate('slct1', 'slct2')">
+    <option value=""></option>
+    <option value="">Turtle</option>
+    <option value="Tiger">Tiger</option>
+</select>
+<hr />
+Description
+<select id="slct2" name="slct2">
+</select>
+</body>
+</html>
