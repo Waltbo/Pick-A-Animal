@@ -13,21 +13,34 @@ Name
 <select id="slct1">
     <option value=""></option>
 </select>
+<hr />
+Description
+<textarea id="desc1"></textarea>
+</select>
 <script type="text/javascript">
 
-    var Tiger= new Animal('Tiger', 'Orange and Fluffy');
+    var Porpoise= new Animal('Porpoise', 'The word porpoise can be traced to Latin porcopiscis, from the combination of porcus (pig) with piscis (fish). Round body, flat nose—sure, that makes sense.');
+    var Aardvark = new Animal('Aardvark', 'When you\'re not sure what it is, go with pig. Afrikaans, the offshoot of Dutch which is spoken in South Africa, gave us aardvark, from Dutch aarde (earth) + varken (pig). Must have been the nose and the pink skin.');
+    var Porcupine = new Animal('Porcupine', 'Pig is such a versatile animal. When in doubt, go with pig! Porcupine comes from the Middle French porc (pig) + espin (from Latin spina, thorn). A thorny, spiky, pig. Well, it is round…');
+    var Hippo = new Animal('Hippo', 'This one can be traced back to the Greek hippos (horse) + potamos (river). It likes to hang out in rivers, and while the Greeks might have been stretching things a bit by calling it a horse, at least they didn\'t go with porcopotamus.');
+    var Rhino = new Animal('Rhino', 'From the Greek rhino- (of or pertaining to the nose) and keras (horn, related to "keratin"). The nose horn certainly is the most noticeable feature of this animal. Let\'s hear it for sober, blunt description.');
+    var Octopus = new Animal('Octopus', 'You already know the Greek octo- means eight from words like octagon. Pus (or pous) means foot, though we\'re used to seeing it in its combining form pod in words like podiatrist and tripod.');
+    var Orangutan = new Animal('Orangutan', 'This comes from the Malay orang (person) + hutan (forest), meaning "person of the forest." Apparently the locals didn\'t originally call the animals orangutans, but Europeans somehow decided that this phrase referred to the furry orange apes. In any case, now there is a Malay word orang utan, meaning orangutan, alongside the native word mawas.');
+    var Squirrel = new Animal('Squirrel', 'Squirrel goes back to Medieval Latin scurellus, a diminutive of scurius, which goes back to the Greek skia (shade) + oura (tail). Squirrels use their tails to shade their bodies, and you can often see them holding them up like tiny, fluffy parasols.');
+    var Chameleon = new Animal('Chameleon', 'Goes back to the Greek chamai (ground) + leon (lion). Chamai could also mean dwarf, or "low to the ground," so a chameleon is a dwarf lion. Not sure if the lion connection was inspired by the chameleon\'s mane-like head outline or cool, regal disposition.');
+    var Armidillo = new Animal('Armidillo', 'The most notable thing about the armadillo is his protective, spiky armor. We took the name from Spanish, where armado means armed. Armadillo is the diminutive of armado—so it means little, bitty armed one.');
     var selection=document.getElementById('slct1');
-    var animalArrays=[Tiger];
+    var description=document.getElementById('desc1');
+    var animalArrays=[Porpoise, Porcupine, Aardvark, Hippo,  Rhino, Octopus, Orangutan, Squirrel, Chameleon, Armidillo];
     for(var i=0; i<animalArrays.length; i++){
         var opt=animalArrays[i];
         var el=document.createElement("option");
-        el.textContent = opt;
+        var es=document.createElement("textarea");
+        es.textContent=opt.aDescription;
+        el.textContent = opt.aName;
         el.value=opt;
         selection.appendChild(el);
     }
 </script>
-<hr />
-Description
-</select>
 </body>
 </html>
