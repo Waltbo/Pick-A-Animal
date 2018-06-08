@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAi4hBFVOh3-wGwnuJPcaUfuygnQbpHA90",
+            authDomain: "animalfinder-903d8.firebaseapp.com",
+            databaseURL: "https://animalfinder-903d8.firebaseio.com",
+            projectId: "animalfinder-903d8",
+            storageBucket: "animalfinder-903d8.appspot.com",
+            messagingSenderId: "410970732736"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="Animal.js"></script>
 
 </head>
 <body>
 
-<h2>Choose animal</h2>
+<h2>Choose Animal</h2>
+
 <hr  />
 <script type="text/javascript">
+        var database = firebase.database();
+
         function divCreate(){
             var div=document.createElement("div");
             div.setAttribute("div", "myDiv");
@@ -45,6 +62,9 @@
         var Armidillo = new Animal('Armidillo', 'The most notable thing about the armadillo is his protective, spiky armor. We took the name from Spanish, where armado means armed. Armadillo is the diminutive of armado—so it means little, bitty armed one.');
         var selection = document.getElementById('slct1');
         var description = document.getElementById('desc1');
+
+        var database=firebase.database();
+        var ref = database.ref('Animals');
         var animalArrays = [Porpoise, Porcupine, Aardvark, Hippo, Rhino, Octopus, Orangutan, Squirrel, Chameleon, Armidillo];
         for (var i = 0; i < animalArrays.length; i++) {
             var opt = animalArrays[i];
