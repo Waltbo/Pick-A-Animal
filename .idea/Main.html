@@ -10,15 +10,13 @@
 <h2>Choose animal</h2>
 <hr  />
 Name
-<select id="slct1">
+<select id="slct1" onchange="labelChange()">
     <option value=""></option>
 </select>
+<label id="label1" >Description: </label>
+<label id="desc1" ></label>
 <hr />
-Description
-<textarea id="desc1"></textarea>
-</select>
 <script type="text/javascript">
-
     var Porpoise= new Animal('Porpoise', 'The word porpoise can be traced to Latin porcopiscis, from the combination of porcus (pig) with piscis (fish). Round body, flat nose—sure, that makes sense.');
     var Aardvark = new Animal('Aardvark', 'When you\'re not sure what it is, go with pig. Afrikaans, the offshoot of Dutch which is spoken in South Africa, gave us aardvark, from Dutch aarde (earth) + varken (pig). Must have been the nose and the pink skin.');
     var Porcupine = new Animal('Porcupine', 'Pig is such a versatile animal. When in doubt, go with pig! Porcupine comes from the Middle French porc (pig) + espin (from Latin spina, thorn). A thorny, spiky, pig. Well, it is round…');
@@ -35,11 +33,14 @@ Description
     for(var i=0; i<animalArrays.length; i++){
         var opt=animalArrays[i];
         var el=document.createElement("option");
-        var es=document.createElement("textarea");
-        es.textContent=opt.aDescription;
         el.textContent = opt.aName;
-        el.value=opt;
+        el.value=opt.aDescription;
         selection.appendChild(el);
+    }
+    function labelChange() {
+        var e = document.getElementById("slct1");
+        var desc=e.value;
+        document.getElementById('desc1').innerHTML = desc;
     }
 </script>
 </body>
